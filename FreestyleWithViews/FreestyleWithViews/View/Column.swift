@@ -18,13 +18,17 @@ class Column: UIStackView {
     var buttonArray = [false,false,false,false,false,false,false,false,false,false]
     
     
+    /// Whenever a button is pressed, changes its visual state and the position on the array corresponding to it.
+    ///
+    /// - Parameter sender: Button receiving tap.
     @IBAction func buttonTap(_ sender: UIButton) {
         let index = sender.tag
         let currentState = self.buttonArray[index]
         
+        // Changes image for normal button state
         sender.setImage((!currentState ? greenIcon:redIcon), for: .normal)
+        // Alters the array condition for the button.
         self.buttonArray[index] = !currentState
         
-        print(self.buttonArray)
     }
 }
